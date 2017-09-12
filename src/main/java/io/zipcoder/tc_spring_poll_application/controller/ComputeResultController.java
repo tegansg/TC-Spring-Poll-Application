@@ -1,9 +1,7 @@
 package io.zipcoder.tc_spring_poll_application.controller;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 
 import javax.inject.Inject;
 
@@ -17,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import dtos.OptionCount;
 import dtos.VoteResult;
 import io.zipcoder.tc_spring_poll_application.domain.Option;
-import io.zipcoder.tc_spring_poll_application.domain.Poll;
 import io.zipcoder.tc_spring_poll_application.domain.Vote;
 import io.zipcoder.tc_spring_poll_application.repositories.VoteRepository;
 
@@ -56,7 +53,6 @@ public class ComputeResultController {
 			totalVotes+=1;
 
 		}
-       
 		
 		Collection<OptionCount> finalResults = results.values();
 		voteResult.setResults(finalResults);
@@ -64,5 +60,8 @@ public class ComputeResultController {
  
         return new ResponseEntity<VoteResult>(voteResult, HttpStatus.OK);
     }
+    
+}
+
     
     
